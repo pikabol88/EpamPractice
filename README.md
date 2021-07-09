@@ -1,2 +1,2 @@
 # EpamPractice
- Summer practise Unity project
+ Summer practice Unity project
