@@ -1,45 +1,51 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: i suggest renaming this class
+[RequireComponent(typeof(Rigidbody))]
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody enemyRigid;
     [SerializeField] private bool isPressed = false;
+    [SerializeField] private float distance = 10f;
+
+    private Camera _camera;
+    private Rigidbody _enemyRigid;
+    private SpringJoint _springJoint;
 
     private void Start()
     {
-        enemyRigid = GetComponent<Rigidbody>();
+        _enemyRigid = GetComponent<Rigidbody>();
+        _springJoint = GetComponent<SpringJoint>();
+
+        _camera = Camera.main;
     }
-    public float distance = 10f;
 
     private void Update()
     {
-        if(isPressed == true)
+        if(isPressed)
         {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance); 
-            Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition); 
-            enemyRigid.position = objPosition; 
+            Vector3 objPosition = _camera.ScreenToWorldPoint(mousePosition); 
+            _enemyRigid.position = objPosition; 
         }
     }
     private void OnMouseUp()
     {
         isPressed = false;
-        enemyRigid.isKinematic = false;
-       // StartCoroutine(LetsGo());
+        _enemyRigid.isKinematic = false;
+        StartCoroutine(LetsGo());
     }
-
 
     private void OnMouseDown()
     {
         isPressed = true;
-        enemyRigid.isKinematic = true;
+        _enemyRigid.isKinematic = true;
     }
 
     IEnumerator LetsGo()
     {
-        yield return new WaitForSeconds(0.3f);
-        Destroy(gameObject.GetComponent<SpringJoint>());
-        this.enabled = false;
+        yield return new WaitForSeconds(0.1f); 
+        Destroy(_springJoint);
+        enabled = false;
     }
 }
