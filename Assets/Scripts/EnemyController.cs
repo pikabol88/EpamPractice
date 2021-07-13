@@ -48,4 +48,16 @@ public class EnemyController : MonoBehaviour
         Destroy(_springJoint);
         enabled = false;
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        StartCoroutine(DestroyEnemy());
+    }
+
+    private IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+    }
 }

@@ -8,7 +8,7 @@ public class DynamicCharacterController : CharacterController
     public int upBoarder;
     public int bottomBoarder;
 
-    private Vector2 moveVector;
+    private Vector2 _moveVector;
 
     private void FixedUpdate()
     {
@@ -20,13 +20,14 @@ public class DynamicCharacterController : CharacterController
     {
         if (transform.transform.position.y >= upBoarder)
         {
-            moveVector = Vector2.down;
+            _moveVector = Vector2.down;
         }
         if (transform.transform.position.y <= bottomBoarder)
         {
-            moveVector = Vector2.up;
+            _moveVector = Vector2.up;
         }
-        transform.Translate(moveVector * speed);
+        transform.Translate(_moveVector * speed);
     }
-    
+
+
 }
