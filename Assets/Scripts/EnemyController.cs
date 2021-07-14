@@ -53,7 +53,11 @@ public class EnemyController : BaseCharacter
 
     private void OnCollisionEnter(Collision collision)
     {
-        StartCoroutine(DestroyEnemy());
+        if(collision.collider.tag == "Ground")
+        {
+            StartCoroutine(DestroyEnemy());
+        }
+        
     }
 
     private IEnumerator DestroyEnemy()

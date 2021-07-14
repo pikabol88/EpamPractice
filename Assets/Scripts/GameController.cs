@@ -84,6 +84,7 @@ public class GameController : MonoBehaviour
 
     public void OnEnemyDestroyed()
     {
-        Instantiate(enemyPrefab, pointForEnemy.transform.position, Quaternion.identity);
+        var enemyObject = Instantiate(enemyPrefab, enemiesContainer.transform);
+        enemyObject.transform.SetParent(enemiesContainer.transform);
     }
 }
