@@ -34,6 +34,20 @@ public class GameController : MonoBehaviour
         }
     }
 
+    protected void Awake()
+    {
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    protected void OnDestroy()
+    {
+        if(_instance == this)
+        {
+            _instance = null;
+        }
+    }
+
     void Start()
     {
         var characters = charactersContainer.GetComponentsInChildren<CharacterController>();
