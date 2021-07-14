@@ -10,6 +10,8 @@ public class CharacterController : BaseCharacter
 
     private void Start()
     {
+
+        id = GetInstanceID();
         livesAmountText.text = (livesAmount).ToString();
     }
 
@@ -23,8 +25,11 @@ public class CharacterController : BaseCharacter
                 livesAmountText.text = (livesAmount).ToString();
                 return;
             }
-            GameController.Instanse.OnCharacterDestroyed(id);               
+            Debug.Log(id);
             gameObject.SetActive(false);
+            GameController.Instanse.OnCharacterDestroyed(id);
+            
+
         }
     }
 }

@@ -5,8 +5,4 @@ using UnityEngine;
 public class BaseCharacter : MonoBehaviour
 {
     public int id;
-    private void Start()
-    {
-        id = GetInstanceID();
-    }
 }

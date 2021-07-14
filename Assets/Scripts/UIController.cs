@@ -8,6 +8,10 @@ public class UIController : MonoBehaviour
    
     public Text score;    
 
+    public GameObject resultLose;
+    public GameObject resultWin;
+
+
     private static UIController _instance;
 
     public static UIController Instanse
@@ -40,5 +44,15 @@ public class UIController : MonoBehaviour
     public void ChangeScore(int scoreNum)
     {
         score.text = $"Score: {scoreNum}";
+    }
+
+    public void DisplayWinPanel()
+    {
+        resultWin.SetActive(true);
+    }
+
+    public void DisplayLosePanel()
+    {
+        resultLose.SetActive(true);
     }
 }

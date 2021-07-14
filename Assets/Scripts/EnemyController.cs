@@ -15,6 +15,8 @@ public class EnemyController : BaseCharacter
 
     private void Start()
     {
+
+        id = GetInstanceID();
         _enemyRigid = GetComponent<Rigidbody>();
         _springJoint = GetComponent<SpringJoint>();
 
@@ -62,9 +64,8 @@ public class EnemyController : BaseCharacter
 
     private IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(1f);
-        GameController.Instanse.OnEnemyDestroyed();
+        yield return new WaitForSeconds(1f);        
         Destroy(gameObject);
-
+        GameController.Instanse.OnEnemyDestroyed();
     }
 }

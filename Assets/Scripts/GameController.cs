@@ -66,13 +66,24 @@ public class GameController : MonoBehaviour
     public void OnCharacterDestroyed(int id)
     {
         var character = _charactersList[id];
+        Debug.Log(character);
         _currentScore = _currentScore + character.livesAmount * baseScore;
+        Debug.Log(_currentScore);
         UIController.Instanse.ChangeScore(_currentScore);
+        _charactersList.Remove(id);
+
+        if (_charactersList.Count == 0)
+        {
+            UIController.Instanse.DisplayWinPanel();
+        }
     }
 
     public void OnEnemyDestroyed()
     {
         var enemyObject = Instantiate(enemyPrefab, enemiesContainer.transform);
-        enemyObject.transform.SetParent(enemiesContainer.transform);
+        if (_enemiesList.Count == 0)
+        {
+            UIController.Instanse.DisplayLosePanel();
+        }
     }
 }
