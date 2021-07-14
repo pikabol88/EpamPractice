@@ -12,14 +12,11 @@ public class EnemyController : BaseCharacter
     private Rigidbody _enemyRigid;
     private SpringJoint _springJoint;
 
-    private GameController _gameController;
 
     private void Start()
     {
         _enemyRigid = GetComponent<Rigidbody>();
         _springJoint = GetComponent<SpringJoint>();
-
-        _gameController = FindObjectOfType<GameController>();
 
         _camera = Camera.main;
     }
@@ -62,7 +59,7 @@ public class EnemyController : BaseCharacter
     private IEnumerator DestroyEnemy()
     {
         yield return new WaitForSeconds(1f);
-        _gameController.OnEnemyDestroyed();
+        GameController.Instanse.OnEnemyDestroyed();
         Destroy(gameObject);
 
     }

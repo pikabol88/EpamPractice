@@ -7,28 +7,24 @@ public class CharacterController : BaseCharacter
 {
     public int livesAmount;
     public TextMesh livesAmountText;
-    private GameController _gameController;
 
     private void Start()
     {
         livesAmountText.text = (livesAmount).ToString();
-        _gameController = FindObjectOfType<GameController>();
     }
 
     protected void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Enemy")
         {
-            if (livesAmount >= 1)
+            if (livesAmount > 1)
             {
-                livesAmountText.text = (int.Parse(livesAmountText.text) - 1).ToString();
+                livesAmount--;
+                livesAmountText.text = (livesAmount).ToString();
+                return;
             }
-            else
-            {
-                _gameController.OnCharacterDestroyed(id);
-               
-                gameObject.SetActive(false);
-            }
+            GameController.Instanse.OnCharacterDestroyed(id);               
+            gameObject.SetActive(false);
         }
     }
 }

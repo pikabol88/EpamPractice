@@ -19,6 +19,21 @@ public class GameController : MonoBehaviour
     public GameObject pointForEnemy;
     public GameObject enemyPrefab;
 
+    private static GameController _instance;
+
+    public static GameController Instanse
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.Log("GameController: instanse not specified");
+            }
+
+            return _instance;
+        }
+    }
+
     void Start()
     {
         var characters = charactersContainer.GetComponentsInChildren<CharacterController>();
