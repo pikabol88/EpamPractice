@@ -11,13 +11,11 @@ public class GameController : MonoBehaviour
     public GameObject charactersContainer;
     public GameObject enemiesContainer;
 
-    public int baseScore;
-    public Text score;
-    private string baseText = "Score:";
-    private int _currentScore = 0;
-
     public GameObject pointForEnemy;
     public GameObject enemyPrefab;
+
+    public int baseScore;
+    private int _currentScore = 0;
 
     private static GameController _instance;
 
@@ -63,23 +61,13 @@ public class GameController : MonoBehaviour
             _enemiesList.Add(element.id, element);
         }
 
-        score.text = baseText;
     }
-
-   /* void MoveEnemies()
-    {
-        if(_enemiesList.Length == 0)
-        {
-            return;
-        }
-
-    }*/
 
     public void OnCharacterDestroyed(int id)
     {
         var character = _charactersList[id];
-        _currentScore = character.livesAmount * baseScore;
-        score.text = baseScore + (_currentScore).ToString();
+        _currentScore = _currentScore + character.livesAmount * baseScore;
+        UIController.Instanse.ChangeScore(_currentScore);
     }
 
     public void OnEnemyDestroyed()
