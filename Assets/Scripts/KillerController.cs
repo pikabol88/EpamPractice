@@ -54,7 +54,7 @@ public class KillerController : BaseCharacter
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Ground")
+        if(collision.collider.CompareTag("Ground"))
         {
             StartCoroutine(DestroyKiller());
         }
