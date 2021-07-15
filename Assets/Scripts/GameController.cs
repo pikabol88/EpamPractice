@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
     public GameObject charactersContainer;
     public GameObject killersContainer;
 
-    public GameObject pointForEnemy;
     public GameObject killerPrefab;
 
     public int baseScore;
