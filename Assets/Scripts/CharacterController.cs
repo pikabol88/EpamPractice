@@ -17,7 +17,7 @@ public class CharacterController : BaseCharacter
 
     protected void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Enemy")
+        if (collision.collider.tag == "Killer")
         {
             if (livesAmount > 1)
             {

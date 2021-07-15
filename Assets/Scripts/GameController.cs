@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    private Dictionary<int,EnemyController> _enemiesList = new Dictionary<int, EnemyController>();
+    private Dictionary<int,KillerController> _killersList = new Dictionary<int, KillerController>();
     private Dictionary<int,CharacterController> _charactersList = new Dictionary<int, CharacterController>();
 
     public GameObject charactersContainer;
-    public GameObject enemiesContainer;
+    public GameObject killersContainer;
 
     public GameObject pointForEnemy;
-    public GameObject enemyPrefab;
+    public GameObject killerPrefab;
 
     public int baseScore;
     private int _currentScore = 0;
@@ -55,10 +55,10 @@ public class GameController : MonoBehaviour
         }
 
 
-        var enemies = enemiesContainer.GetComponentsInChildren<EnemyController>();
-        foreach (var element in enemies)
+        var killers = killersContainer.GetComponentsInChildren<KillerController>();
+        foreach (var element in killers)
         {
-            _enemiesList.Add(element.id, element);
+            _killersList.Add(element.id, element);
         }
 
     }
@@ -78,10 +78,10 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void OnEnemyDestroyed()
+    public void OnKillerDestroyed()
     {
-        var enemyObject = Instantiate(enemyPrefab, enemiesContainer.transform);
-        if (_enemiesList.Count == 0)
+        var enemyObject = Instantiate(killerPrefab, killersContainer.transform);
+        if (_killersList.Count == 0)
         {
             UIController.Instanse.DisplayLosePanel();
         }

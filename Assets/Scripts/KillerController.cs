@@ -1,15 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-//TODO: i suggest renaming this class
 [RequireComponent(typeof(Rigidbody))]
-public class EnemyController : BaseCharacter
+public class KillerController : BaseCharacter
 {
     [SerializeField] private bool isPressed = false;
     [SerializeField] private float distance = 10f;
 
     private Camera _camera;
-    private Rigidbody _enemyRigid;
+    private Rigidbody _killerRigid;
     private SpringJoint _springJoint;
 
 
@@ -17,7 +16,7 @@ public class EnemyController : BaseCharacter
     {
 
         id = GetInstanceID();
-        _enemyRigid = GetComponent<Rigidbody>();
+        _killerRigid = GetComponent<Rigidbody>();
         _springJoint = GetComponent<SpringJoint>();
 
         _camera = Camera.main;
@@ -29,20 +28,20 @@ public class EnemyController : BaseCharacter
         {
             Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance); 
             Vector3 objPosition = _camera.ScreenToWorldPoint(mousePosition); 
-            _enemyRigid.position = objPosition; 
+            _killerRigid.position = objPosition; 
         }
     }
     private void OnMouseUp()
     {
         isPressed = false;
-        _enemyRigid.isKinematic = false;
+        _killerRigid.isKinematic = false;
         StartCoroutine(LetsGo());
     }
 
     private void OnMouseDown()
     {
         isPressed = true;
-        _enemyRigid.isKinematic = true;
+        _killerRigid.isKinematic = true;
     }
 
     IEnumerator LetsGo()
@@ -57,15 +56,15 @@ public class EnemyController : BaseCharacter
     {
         if(collision.collider.tag == "Ground")
         {
-            StartCoroutine(DestroyEnemy());
+            StartCoroutine(DestroyKiller());
         }
         
     }
 
-    private IEnumerator DestroyEnemy()
+    private IEnumerator DestroyKiller()
     {
         yield return new WaitForSeconds(1f);        
         Destroy(gameObject);
-        GameController.Instanse.OnEnemyDestroyed();
+        GameController.Instanse.OnKillerDestroyed();
     }
 }
