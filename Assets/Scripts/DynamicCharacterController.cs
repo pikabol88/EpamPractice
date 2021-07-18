@@ -18,11 +18,11 @@ public class DynamicCharacterController : CharacterController
 
     private void MoveCharacter()
     {
-        if (transform.transform.position.y >= upBoarder)
+        if (transform.position.y >= upBoarder)
         {
             _moveVector = Vector2.down;
         }
-        if (transform.transform.position.y <= bottomBoarder)
+        if (transform.position.y <= bottomBoarder)
         {
             _moveVector = Vector2.up;
         }

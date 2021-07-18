@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CharacterController : BaseCharacter
 {
     public int livesAmount;
-    public TextMesh livesAmountText;
+    public Text livesAmountText;
 
     private void Start()
     {

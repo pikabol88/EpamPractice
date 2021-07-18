@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ClamLivesNumber : MonoBehaviour
 {
     public Text livesNumber;
+    public GameObject livesPanel;
     private Camera _camera;
 
     private void Start()
@@ -16,6 +17,7 @@ public class ClamLivesNumber : MonoBehaviour
     private void Update()
     {
         Vector3 livesNumberPos = _camera.WorldToScreenPoint(this.transform.position);
-        livesNumber.transform.position = livesNumberPos;
+        livesPanel.transform.position = livesNumberPos;
+        //livesNumber.transform.position = livesNumberPos;
     }
 }
