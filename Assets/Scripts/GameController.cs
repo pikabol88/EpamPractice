@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
     public int baseScore;
     private int _currentScore = 0;
+    private int _currentKiller = 0;
 
     private static GameController _instance;
 
@@ -55,7 +56,13 @@ public class GameController : MonoBehaviour
 
         foreach (var element in killers)
         {
+            Debug.Log(element.id);
             _killersList.Add(element.id, element);
+        }
+
+        for(int i = 1;i< killers.Length; i++)
+        {
+            (killers[i]).gameObject.SetActive(false);
         }
 
     }
@@ -63,7 +70,7 @@ public class GameController : MonoBehaviour
     public void OnCharacterDestroyed(int id)
     {
         var character = _charactersList[id];
-        Debug.Log(character);
+        Debug.Log(id);
         _currentScore = _currentScore + character.livesAmount * baseScore;
         Debug.Log(_currentScore);
         UIController.Instanse.ChangeScore(_currentScore);
@@ -77,8 +84,12 @@ public class GameController : MonoBehaviour
 
     public void OnKillerDestroyed()
     {
-        var enemyObject = Instantiate(killerPrefab);
-        if (_killersList.Count == 0)
+        if(_currentKiller < killers.Length-1)
+        {
+            _currentKiller++;
+            (killers[_currentKiller]).gameObject.SetActive(true);
+        }
+        else
         {
             UIController.Instanse.DisplayLosePanel();
         }
