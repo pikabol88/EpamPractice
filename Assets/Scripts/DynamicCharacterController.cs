@@ -5,8 +5,8 @@ using UnityEngine;
 public class DynamicCharacterController : CharacterController
 {
     public float speed;
-    public int upBoarder;
-    public int bottomBoarder;
+    private int upBoarder = 55;
+    private int bottomBoarder = 0;
 
     private Vector2 _moveVector;
 
