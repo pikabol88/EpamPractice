@@ -8,8 +8,8 @@ public class GameController : MonoBehaviour
     private Dictionary<int,KillerController> _killersList = new Dictionary<int, KillerController>();
     private Dictionary<int,CharacterController> _charactersList = new Dictionary<int, CharacterController>();
 
-    public GameObject charactersContainer;
-    public GameObject killersContainer;
+    public CharacterController[] characters;
+    public KillerController[] killers;
 
     public GameObject killerPrefab;
 
@@ -47,14 +47,12 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        var characters = charactersContainer.GetComponentsInChildren<CharacterController>();
         foreach(var element in characters)
         {
             _charactersList.Add(element.id,element);
         }
 
 
-        var killers = killersContainer.GetComponentsInChildren<KillerController>();
         foreach (var element in killers)
         {
             _killersList.Add(element.id, element);
@@ -79,7 +77,7 @@ public class GameController : MonoBehaviour
 
     public void OnKillerDestroyed()
     {
-        var enemyObject = Instantiate(killerPrefab, killersContainer.transform);
+        var enemyObject = Instantiate(killerPrefab);
         if (_killersList.Count == 0)
         {
             UIController.Instanse.DisplayLosePanel();
