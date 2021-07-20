@@ -1,15 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 public class KillerController : BaseCharacter
 {
     [SerializeField] private bool isPressed = false;
     [SerializeField] private float distance = 10f;
+    [SerializeField] private Rigidbody _killerRigid;
+    [SerializeField] private SpringJoint _springJoint;
 
     private Camera _camera;
-    private Rigidbody _killerRigid;
-    private SpringJoint _springJoint;
+    
     private Animator _animator;
 
 
@@ -17,8 +18,6 @@ public class KillerController : BaseCharacter
     {
 
         id = GetInstanceID();
-        _killerRigid = GetComponent<Rigidbody>();
-        _springJoint = GetComponent<SpringJoint>();
         _animator = GetComponent<Animator>();
         _camera = Camera.main;
     }
@@ -41,6 +40,7 @@ public class KillerController : BaseCharacter
 
     private void OnMouseDown()
     {
+        Debug.Log("Clicked");
         isPressed = true;
         _killerRigid.isKinematic = true;
     }

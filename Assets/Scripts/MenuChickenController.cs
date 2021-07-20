@@ -18,7 +18,6 @@ public class MenuChickenController : MonoBehaviour
     void Update()
     {
         _curr_time -= Time.deltaTime;
-        Debug.Log(_curr_time);
         if (_curr_time <= 0)
         {
             StartRandomAnimation();
