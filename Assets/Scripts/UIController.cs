@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
@@ -78,5 +79,14 @@ public class UIController : MonoBehaviour
         _fadePanelAnimator.SetBool("Close", true);
         _fadePanelAnimator.SetBool("Open", false);
         transparentPanel.SetActive(false);
+    }
+
+    public void BackToMainMenu()
+    {        
+        CloseFadePanel();
+        resultLose.SetActive(false);
+        resultWin.SetActive(false);
+
+        SceneManager.LoadScene(0);
     }
 }

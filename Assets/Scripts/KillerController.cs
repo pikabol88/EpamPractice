@@ -57,7 +57,7 @@ public class KillerController : BaseCharacter
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Ground"))
+        if(collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Character"))
         {
             _animator.SetBool("Die", true);
             StartCoroutine(DestroyKiller());

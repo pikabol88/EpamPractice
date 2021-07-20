@@ -70,11 +70,6 @@ public class GameController : MonoBehaviour
 
     public void OnCharacterDestroyed(int id)
     {
-        Debug.Log("need" + id);
-        foreach(var el in _charactersList)
-        {
-            Debug.Log("exist" + el.Key);
-        }
         var character = _charactersList[id];
         _currentScore = _currentScore + character.livesAmount * baseScore;
         UIController.Instanse.ChangeScore(_currentScore);
