@@ -50,6 +50,7 @@ public class GameController : MonoBehaviour
     {
         foreach(var element in characters)
         {
+            Debug.Log(element.id);
             _charactersList.Add(element.id,element);
         }
 
@@ -69,10 +70,13 @@ public class GameController : MonoBehaviour
 
     public void OnCharacterDestroyed(int id)
     {
+        Debug.Log("need" + id);
+        foreach(var el in _charactersList)
+        {
+            Debug.Log("exist" + el.Key);
+        }
         var character = _charactersList[id];
-        Debug.Log(id);
         _currentScore = _currentScore + character.livesAmount * baseScore;
-        Debug.Log(_currentScore);
         UIController.Instanse.ChangeScore(_currentScore);
         _charactersList.Remove(id);
 

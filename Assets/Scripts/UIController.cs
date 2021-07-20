@@ -10,9 +10,15 @@ public class UIController : MonoBehaviour
 
     public GameObject resultLose;
     public GameObject resultWin;
+    public GameObject fadePanel;
+    public GameObject transparentPanel;
+
+    private Animator _fadePanelAnimator;
 
 
     private static UIController _instance;
+    
+
 
     public static UIController Instanse
     {
@@ -31,6 +37,11 @@ public class UIController : MonoBehaviour
     {
         _instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        _fadePanelAnimator = fadePanel.GetComponent<Animator>();
     }
 
     protected void OnDestroy()
@@ -54,5 +65,18 @@ public class UIController : MonoBehaviour
     public void DisplayLosePanel()
     {
         resultLose.SetActive(true);
+    }
+
+    public void OpenFadePanel()
+    {
+        _fadePanelAnimator.SetBool("Open", true);
+        transparentPanel.SetActive(true);
+    }
+
+    public void CloseFadePanel()
+    {
+        _fadePanelAnimator.SetBool("Close", true);
+        _fadePanelAnimator.SetBool("Open", false);
+        transparentPanel.SetActive(false);
     }
 }
