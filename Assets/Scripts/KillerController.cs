@@ -10,6 +10,7 @@ public class KillerController : BaseCharacter
     private Camera _camera;
     private Rigidbody _killerRigid;
     private SpringJoint _springJoint;
+    private Animator _animator;
 
 
     private void Start()
@@ -18,7 +19,7 @@ public class KillerController : BaseCharacter
         id = GetInstanceID();
         _killerRigid = GetComponent<Rigidbody>();
         _springJoint = GetComponent<SpringJoint>();
-
+        _animator = GetComponent<Animator>();
         _camera = Camera.main;
     }
 
@@ -49,6 +50,8 @@ public class KillerController : BaseCharacter
         yield return new WaitForSeconds(0.1f); 
         Destroy(_springJoint);
         enabled = false;
+
+        _animator.SetBool("Move", true);
     }
 
 
@@ -56,9 +59,11 @@ public class KillerController : BaseCharacter
     {
         if(collision.collider.CompareTag("Ground"))
         {
+            _animator.SetBool("Die", true);
             StartCoroutine(DestroyKiller());
         }
-        
+        _animator.SetBool("Attack", true);
+
     }
 
     private IEnumerator DestroyKiller()
