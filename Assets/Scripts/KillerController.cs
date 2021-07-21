@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-//[RequireComponent(typeof(Rigidbody))]
 public class KillerController : BaseCharacter
 {
     [SerializeField] private bool isPressed = false;
@@ -22,16 +21,17 @@ public class KillerController : BaseCharacter
 
     private void Update()
     {
-        if(isPressed)
+        if (isPressed)
         {
-            Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePosition = _camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -_camera.transform.position.z));
+
             if (Vector3.Distance(mousePosition, _slingshotRigid.position) > distance)
             {
                 _killerRigid.position = _slingshotRigid.position + (mousePosition - _slingshotRigid.position).normalized * distance;
-            } 
-            else 
+            }
+            else
             {
-                _killerRigid.position = mousePosition;
+                transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
             }           
         }
     }
