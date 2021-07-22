@@ -34,6 +34,15 @@ public class KillerController : BaseCharacter
                 transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
             }           
         }
+        else
+        {
+            Vector3 point = _camera.WorldToViewportPoint(transform.position); 
+            if (point.y < 0f || point.y > 1f || point.x > 1f || point.x < 0f)
+            {
+                StartCoroutine(DestroyKiller());
+            }
+        }
+        
     }
     private void OnMouseUp()
     {
