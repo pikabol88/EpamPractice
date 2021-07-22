@@ -37,7 +37,7 @@ public class UIController : MonoBehaviour
     protected void Awake()
     {
         _instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
