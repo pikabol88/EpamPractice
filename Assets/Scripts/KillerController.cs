@@ -10,7 +10,7 @@ public class KillerController : BaseCharacter
     [SerializeField] private SpringJoint _springJoint;
     [SerializeField] private Animator _animator;
 
-    private Camera _camera;  
+    private Camera _camera;
 
     private void Start()
     {
@@ -36,13 +36,13 @@ public class KillerController : BaseCharacter
         }
         else
         {
-            Vector3 point = _camera.WorldToViewportPoint(transform.position); 
-            if (point.y < 0f || point.y > 1f || point.x > 1f || point.x < 0f)
-            {
-                StartCoroutine(DestroyKiller());
-            }
+             Vector3 point = _camera.WorldToViewportPoint(transform.position); 
+             if (point.y < 0f || point.y > 1f || point.x > 1f || point.x < 0f)
+             {
+                 StartCoroutine(DestroyKiller());
+             }
         }
-        
+
     }
     private void OnMouseUp()
     {
@@ -56,26 +56,35 @@ public class KillerController : BaseCharacter
         Debug.Log("Clicked");
         isPressed = true;
         _killerRigid.isKinematic = true;
+        GameController.Instanse.KillerOnPress(false);
     }
 
     IEnumerator LetsGo()
     {
         yield return new WaitForSeconds(0.1f); 
         Destroy(_springJoint);
-        enabled = false;
-
+        enabled = false;        
         _animator.SetBool("Move", true);
+        yield return new WaitForSeconds(0.1f);
+        GameController.Instanse.KillerOnPress(true);
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Character"))
+        if (collision.collider.CompareTag("Character"))
         {
-            _animator.SetBool("Die", true);
+            _animator.SetBool("Attack", true);
             StartCoroutine(DestroyKiller());
-        }
-        _animator.SetBool("Attack", true);
+        }        
+        if (collision.collider.CompareTag("Ground"))
+        {
+            if (!isPressed)
+            {
+                _animator.SetBool("Die", true);
+                StartCoroutine(DestroyKiller());
+            }
+        }      
 
     }
 
@@ -84,5 +93,6 @@ public class KillerController : BaseCharacter
         yield return new WaitForSeconds(1f);        
         Destroy(gameObject);
         GameController.Instanse.OnKillerDestroyed();
+        StopAllCoroutines();
     }
 }

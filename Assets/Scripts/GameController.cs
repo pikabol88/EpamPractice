@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private Terrain _terrain;
+
     private Dictionary<int,KillerController> _killersList = new Dictionary<int, KillerController>();
     private Dictionary<int,CharacterController> _charactersList = new Dictionary<int, CharacterController>();
 
@@ -92,5 +94,10 @@ public class GameController : MonoBehaviour
         {
             UIController.Instanse.DisplayLosePanel();
         }
+    }
+
+    public void KillerOnPress(bool state)
+    {
+        _terrain.GetComponent<TerrainCollider>().enabled = state;
     }
 }

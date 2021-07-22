@@ -71,6 +71,7 @@ public class UIController : MonoBehaviour
     public void OpenFadePanel()
     {
         _fadePanelAnimator.SetBool("Open", true);
+        _fadePanelAnimator.SetBool("Close", false);
         transparentPanel.SetActive(true);
     }
 
