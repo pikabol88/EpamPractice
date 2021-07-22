@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+
     protected void OnDestroy()
     {
         if(_instance == this)
@@ -61,6 +62,7 @@ public class GameController : MonoBehaviour
         {
             Debug.Log(element.id);
             _killersList.Add(element.id, element);
+            element.Mesh.material = SettingsController.Instanse.BatMaterial;
         }
 
         for(int i = 1;i< killers.Length; i++)

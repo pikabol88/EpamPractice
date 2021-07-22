@@ -9,8 +9,17 @@ public class KillerController : BaseCharacter
     [SerializeField] private Rigidbody _slingshotRigid;
     [SerializeField] private SpringJoint _springJoint;
     [SerializeField] private Animator _animator;
+    [SerializeField] private SkinnedMeshRenderer _mesh;
 
     private Camera _camera;
+
+    public SkinnedMeshRenderer Mesh
+    {
+        get
+        {
+            return _mesh;
+        }
+    }
 
     private void Start()
     {

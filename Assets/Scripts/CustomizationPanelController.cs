@@ -31,6 +31,7 @@ public class CustomizationPanelController : MonoBehaviour
         else
         {
             _bat.GetComponent<SkinnedMeshRenderer>().material = material;
+            SettingsController.Instanse.BatMaterial = material;
         }
     }
 
