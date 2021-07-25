@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlaySound : MonoBehaviour
 {
     public AudioSource onBtnClickSound;
+    public AudioSource characterSound;
 
     private static PlaySound _instance;
 
@@ -28,9 +29,26 @@ public class PlaySound : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        StartCoroutine(CharacterSound());
+    }
     public void PlayOnBtnClickSound()
     {
         onBtnClickSound.Play();
+    }
+
+    public void PlayCharacterSound()
+    {
+        characterSound.Play();
+        StartCoroutine(CharacterSound());
+    }
+
+
+    private IEnumerator CharacterSound()
+    {
+        yield return new WaitForSeconds(Random.Range(3f, 10f));
+        PlayCharacterSound();
     }
 
 }
