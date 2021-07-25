@@ -104,9 +104,10 @@ public class KillerController : BaseCharacter
     }
 
     private IEnumerator DestroyKiller()
-    {
+    {       
         yield return new WaitForSeconds(1f);
         _destroy.Play();
+        yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
         GameController.Instanse.OnKillerDestroyed();
         StopAllCoroutines();
