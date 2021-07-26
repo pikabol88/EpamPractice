@@ -105,11 +105,23 @@ public class KillerController : BaseCharacter
 
     private IEnumerator DestroyKiller()
     {       
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         _destroy.Play();
-        yield return new WaitForSeconds(0.1f);
+        Boom();
+        yield return new WaitForSeconds(0.4f);        
         Destroy(gameObject);
         GameController.Instanse.OnKillerDestroyed();
         StopAllCoroutines();
+    }
+
+    private void Boom()
+    {
+        var _particleSystem = GetComponentsInChildren<ParticleSystem>();
+        Debug.Log(_particleSystem);
+        foreach (var ps in _particleSystem)
+        {
+            Debug.Log(ps);
+            ps.Play();
+        }
     }
 }
