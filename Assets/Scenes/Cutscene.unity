@@ -615,6 +615,7 @@ MonoBehaviour:
   _batMesh: {fileID: 2058310737}
   _chickenMesh: {fileID: 725080342}
   _bat: {fileID: 1201469646}
+  _batAnimator: {fileID: 1497539293}
   _chicken: {fileID: 1806950184}
 --- !u!114 &351577858
 MonoBehaviour:
@@ -631,12 +632,42 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: c28a723d43387ad479e634f1d3d3ef2e, type: 2}
+    - {fileID: 11400000, guid: 4a2966e6db1baf941b10dd5d58d2414d, type: 2}
+    - {fileID: 11400000, guid: 2362276fb6d52914f91bf4588d044568, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 351577857}
           m_TargetAssemblyTypeName: CatSceneManager, Assembly-CSharp
           m_MethodName: Destroy
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 351577857}
+          m_TargetAssemblyTypeName: CatSceneManager, Assembly-CSharp
+          m_MethodName: Attack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 351577857}
+          m_TargetAssemblyTypeName: CatSceneManager, Assembly-CSharp
+          m_MethodName: Move
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -15443,8 +15474,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688567895}
-  m_LocalRotation: {x: 0.3777529, y: 0.31705156, z: -0.13947862, w: 0.8586774}
-  m_LocalPosition: {x: 402, y: 647, z: -33}
+  m_LocalRotation: {x: -0.30401662, y: -0.1213825, z: -0.039087553, w: 0.9440934}
+  m_LocalPosition: {x: 273.00006, y: 465, z: -183.99995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1853350866}
@@ -15887,8 +15918,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3777529, y: 0.31705156, z: -0.13947862, w: 0.8586774}
-  m_LocalPosition: {x: 402, y: 647, z: -33}
+  m_LocalRotation: {x: -0.06751828, y: -0.39393547, z: -0.029030764, w: 0.91619503}
+  m_LocalPosition: {x: 609, y: 43, z: -249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16529,6 +16560,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2188881219262979090}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1497539293 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2188881220203135057, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+    type: 3}
+  m_PrefabInstance: {fileID: 2188881219262979090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1497539294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16661,7 +16698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -2.4855661, y: -14, z: -11.064828}
+  m_FollowOffset: {x: -15.468585, y: -196, z: 187.11038}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 1
@@ -16915,7 +16952,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107803147}
-  m_LocalRotation: {x: -0.3803492, y: -0.38987613, z: -0.18109138, w: 0.8188633}
+  m_LocalRotation: {x: -0.06751828, y: -0.39393547, z: -0.029030764, w: 0.91619503}
   m_LocalPosition: {x: 609, y: 43, z: -249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17549,7 +17586,7 @@ PrefabInstance:
     - target: {fileID: 2188881219127089728, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089729, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}

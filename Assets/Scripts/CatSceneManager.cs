@@ -9,7 +9,17 @@ public class CatSceneManager : MonoBehaviour
     [SerializeField] private GameObject _chickenMesh;
 
     [SerializeField] private GameObject _bat;
+    [SerializeField] private Animator _batAnimator;
     [SerializeField] private GameObject _chicken;
+
+    public void Move()
+    {
+        _batAnimator.SetBool("Move", true);
+    }
+    public void Attack()
+    {
+        _batAnimator.SetBool("Attack", true);
+    }
 
     public void Destroy()
     {
