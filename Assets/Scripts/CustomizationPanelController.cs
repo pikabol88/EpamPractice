@@ -19,7 +19,8 @@ public class CustomizationPanelController : MonoBehaviour
         {
             _customizationList.Add(_materialNames[i], _materials[i]);
         }
-        //_toggleGroup.gameObject.GetComponentsInChildren<Toggle>()[0].isOn = true;
+        _toggleGroup.ActiveToggles().First().Select();
+        ChangeColor();
     }
     public void ChangeColor()
     {

@@ -15918,7 +15918,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.3803492, y: -0.38987613, z: -0.18109138, w: 0.8188633}
+  m_LocalRotation: {x: -0.38034922, y: -0.38987616, z: -0.1810914, w: 0.8188632}
   m_LocalPosition: {x: 609, y: 43, z: -249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -16950,7 +16950,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107803147}
-  m_LocalRotation: {x: -0.3803492, y: -0.38987613, z: -0.18109138, w: 0.8188633}
+  m_LocalRotation: {x: -0.38034922, y: -0.38987616, z: -0.1810914, w: 0.8188632}
   m_LocalPosition: {x: 609, y: 43, z: -249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18206,7 +18206,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4.37
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2188881219127089734, guid: e19c3dd9b31f5da4f9cb1517bbae353e, type: 3}
+    - {fileID: 2188881219127089730, guid: e19c3dd9b31f5da4f9cb1517bbae353e, type: 3}
+    - {fileID: 2188881219127089729, guid: e19c3dd9b31f5da4f9cb1517bbae353e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e19c3dd9b31f5da4f9cb1517bbae353e, type: 3}
 --- !u!137 &2188881219262979091 stripped
 SkinnedMeshRenderer:
