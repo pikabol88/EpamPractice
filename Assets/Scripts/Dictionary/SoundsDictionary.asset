@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7364c29b62a6fab409ae0189fe5f986b, type: 3}
-  m_Name: New Dictionary Storage
+  m_Name: SoundsDictionary
   m_EditorClassIdentifier: 
   keys:
   - OnBtnClick
-  - 
-  - 
-  - 
-  - 
+  - LetsGo
+  - Destroy
+  - BatAttack
+  - Chicken
   values:
   - {fileID: 8300000, guid: 666270b930b6a7d4186374b4dee0e163, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 1c3c6e1041106f5408284f90edb108a7, type: 3}
+  - {fileID: 8300000, guid: b5c7f41a4af043043bca02281dec37fb, type: 3}
+  - {fileID: 8300000, guid: 90c20e3be6dcddb49abb7a2c5397a123, type: 3}
+  - {fileID: 8300000, guid: d5da26ef189318946b1eccd6f1198f83, type: 3}

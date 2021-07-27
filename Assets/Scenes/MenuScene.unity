@@ -1249,6 +1249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 758644504}
   - component: {fileID: 758644503}
+  - component: {fileID: 758644505}
   m_Layer: 0
   m_Name: SoundController
   m_TagString: Untagged
@@ -1285,6 +1286,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &758644505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758644502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07496cdf738b15f46812b5a28249de30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dictionaryData: {fileID: 11400000, guid: b36c7c9da3b8c9a48868b60cd90111a8, type: 2}
+  keys:
+  - OnBtnClick
+  - 
+  - 
+  - 
+  - 
+  values:
+  - {fileID: 8300000, guid: 666270b930b6a7d4186374b4dee0e163, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  modifyValues: 0
 --- !u!1 &780605297
 GameObject:
   m_ObjectHideFlags: 0
