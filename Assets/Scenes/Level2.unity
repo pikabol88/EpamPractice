@@ -516,6 +516,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
       propertyPath: m_TagString
       value: Killer
       objectReference: {fileID: 0}
@@ -2174,6 +2179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
@@ -5761,6 +5771,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
       propertyPath: m_TagString
       value: Killer
       objectReference: {fileID: 0}
@@ -6631,6 +6646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
@@ -8933,6 +8953,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
@@ -12464,6 +12489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
@@ -16736,6 +16766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
       propertyPath: m_TagString
       value: Killer
       objectReference: {fileID: 0}
@@ -18437,6 +18472,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}
@@ -21162,6 +21202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bat (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2188881219127089757, guid: e19c3dd9b31f5da4f9cb1517bbae353e,
         type: 3}

@@ -89,6 +89,6 @@ public class UIController : MonoBehaviour
         resultLose.SetActive(false);
         resultWin.SetActive(false);
         PlaySound.Instanse.PlayOnBtnClickSound();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
