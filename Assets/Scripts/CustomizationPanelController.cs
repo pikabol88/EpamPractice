@@ -8,6 +8,7 @@ public class CustomizationPanelController : MonoBehaviour
 {
     [SerializeField] private ToggleGroup _toggleGroup;    
     [SerializeField] private GameObject _bat;
+    [SerializeField] private GameObject _customizationPanel;
 
     [SerializeField] private string[] _materialNames;
     [SerializeField] private Material[] _materials;
@@ -18,10 +19,20 @@ public class CustomizationPanelController : MonoBehaviour
         for (int i = 0; i< _materialNames.Length; i++)
         {
             _customizationList.Add(_materialNames[i], _materials[i]);
-        }
-        _toggleGroup.ActiveToggles().First().Select();
-        ChangeColor();
+        }      
     }
+
+    private void OnEnable()
+    {
+        _customizationPanel.SetActive(true);
+        _toggleGroup.ActiveToggles().First().Select();
+        Debug.Log("lol");        
+        if (SettingsController.Instanse.BatMaterial = null)
+        {
+            ChangeColor();
+        }
+    }
+
     public void ChangeColor()
     {
         Toggle theActiveToggle = _toggleGroup.ActiveToggles().FirstOrDefault();
@@ -35,6 +46,11 @@ public class CustomizationPanelController : MonoBehaviour
             _bat.GetComponent<SkinnedMeshRenderer>().material = material;
             SettingsController.Instanse.BatMaterial = material;
         }
+    }
+
+    private void OnDisable()
+    {
+        _customizationPanel.SetActive(false);
     }
 
 

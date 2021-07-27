@@ -20,12 +20,16 @@ public class MenuUIHandler : MonoBehaviour
     public void DisplayMainMenu()
     {
         customizationMenu.SetActive(false);
+        customizationMenu.GetComponent<CustomizationPanelController>().enabled = false;
+
         mainMenu.SetActive(true);
     }
 
     public void DisplayCustomizationMenu()
     {
         customizationMenu.SetActive(true);
+        customizationMenu.GetComponent<CustomizationPanelController>().enabled = true;
+
         mainMenu.SetActive(false);
     }
 }
