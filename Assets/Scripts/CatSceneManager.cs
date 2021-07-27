@@ -44,7 +44,7 @@ public class CatSceneManager : MonoBehaviour
 
     private IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(0.4f);
+        SceneManager.LoadScene(1);
     }
 }

@@ -11,10 +11,11 @@ public class MenuUIHandler : MonoBehaviour
 
     public GameObject mainMenu;
     public GameObject customizationMenu;
+    public GameObject levelSelectionMenu;
 
-    public void StartGame()
+    public void StartGame(int number)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(number);
     }
 
     public void DisplayMainMenu()
@@ -30,6 +31,12 @@ public class MenuUIHandler : MonoBehaviour
         customizationMenu.SetActive(true);
         customizationMenu.GetComponent<CustomizationPanelController>().enabled = true;
 
+        mainMenu.SetActive(false);
+    }
+
+    public void DisplayLevelSelectionMenu()
+    {
+        levelSelectionMenu.SetActive(true);
         mainMenu.SetActive(false);
     }
 }
