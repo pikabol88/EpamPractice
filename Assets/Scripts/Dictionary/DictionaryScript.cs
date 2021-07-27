@@ -12,7 +12,7 @@ public class DictionaryScript<DictionaryValueType> : MonoBehaviour, ISerializati
     [SerializeField]
     private List<DictionaryValueType> values = new List<DictionaryValueType>();
 
-    private Dictionary<string, DictionaryValueType> myDictionary = new Dictionary<string, DictionaryValueType>();
+    protected Dictionary<string, DictionaryValueType> myDictionary = new Dictionary<string, DictionaryValueType>();
 
     public bool modifyValues;
 
@@ -65,4 +65,6 @@ public class DictionaryScript<DictionaryValueType> : MonoBehaviour, ISerializati
             Debug.Log("Key: " + pair.Key + " Value: " + pair.Value);
         }
     }
+
+   
 }

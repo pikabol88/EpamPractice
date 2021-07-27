@@ -27,6 +27,9 @@ public class CatSceneManager : MonoBehaviour
         _batMesh.SetActive(false);
         var effects2 = _chicken.GetComponentsInChildren<ParticleSystem>();
         _chickenMesh.SetActive(false);
+
+        PlaySound.Instanse.PlayBatDestroySound();
+
         foreach (var element in effects1)
         {
             element.Play();            

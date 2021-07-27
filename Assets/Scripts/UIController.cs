@@ -70,8 +70,9 @@ public class UIController : MonoBehaviour
 
     public void OpenFadePanel()
     {
-        _fadePanelAnimator.SetBool("Open", true);
+        _fadePanelAnimator.SetBool("Open", true);        
         _fadePanelAnimator.SetBool("Close", false);
+        PlaySound.Instanse.PlayOnBtnClickSound();
         transparentPanel.SetActive(true);
     }
 
@@ -87,7 +88,7 @@ public class UIController : MonoBehaviour
         CloseFadePanel();
         resultLose.SetActive(false);
         resultWin.SetActive(false);
-
+        PlaySound.Instanse.PlayOnBtnClickSound();
         SceneManager.LoadScene(0);
     }
 }

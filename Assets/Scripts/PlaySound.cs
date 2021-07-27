@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlaySound : MonoBehaviour
 {
-    public AudioSource onBtnClickSound;
-    public AudioSource characterSound;
+   // public AudioSource onBtnClickSound;
+   // public AudioSource characterSound;
+
+    [SerializeField] private AudioSource _audioSource;
 
     private static PlaySound _instance;
+    private DictionarySoundsScript _soundsDict;
 
     public static PlaySound Instanse
     {
@@ -31,19 +34,39 @@ public class PlaySound : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(CharacterSound());
+        _soundsDict = gameObject.GetComponent<DictionarySoundsScript>();
+        //StartCoroutine(CharacterSound());
     }
     public void PlayOnBtnClickSound()
     {
-        onBtnClickSound.Play();
+        _audioSource.clip = _soundsDict.GetValue("OnBtnClick");
+        _audioSource.Play();
+    }
+
+    public void PlayBatGoSound()
+    {
+        _audioSource.clip = _soundsDict.GetValue("LetsGo");
+        _audioSource.Play();
+    }
+
+    public void PlayBatCollisionSound()
+    {
+        _audioSource.clip = _soundsDict.GetValue("BatAttack");
+        _audioSource.Play();
+    }
+
+    public void PlayBatDestroySound()
+    {
+        _audioSource.clip = _soundsDict.GetValue("Destroy");
+        _audioSource.Play();
     }
 
     public void PlayCharacterSound()
     {
-        characterSound.Play();
+        _audioSource.clip = _soundsDict.GetValue("Chicken");
+        _audioSource.Play();
         StartCoroutine(CharacterSound());
     }
-
 
     private IEnumerator CharacterSound()
     {

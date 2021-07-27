@@ -11,9 +11,9 @@ public class KillerController : BaseCharacter
     [SerializeField] private Animator _animator;
     [SerializeField] private SkinnedMeshRenderer _mesh;
 
-    [SerializeField] private AudioSource _onMouseUp;
-    [SerializeField] private AudioSource _onCollision;
-    [SerializeField] private AudioSource _destroy;
+   // [SerializeField] private AudioSource _onMouseUp;
+    //[SerializeField] private AudioSource _onCollision;
+    //[SerializeField] private AudioSource _destroy;
 
     private Camera _camera;
 
@@ -61,7 +61,7 @@ public class KillerController : BaseCharacter
     {
         isPressed = false;
         _killerRigid.isKinematic = false;
-        _onMouseUp.Play();
+        PlaySound.Instanse.PlayBatGoSound();
         StartCoroutine(LetsGo());
     }
 
@@ -89,7 +89,7 @@ public class KillerController : BaseCharacter
         if (collision.collider.CompareTag("Character"))
         {
             _animator.SetBool("Attack", true);
-            _onCollision.Play();
+            PlaySound.Instanse.PlayBatCollisionSound();
             StartCoroutine(DestroyKiller());
         }        
         if (collision.collider.CompareTag("Ground"))
@@ -106,7 +106,7 @@ public class KillerController : BaseCharacter
     private IEnumerator DestroyKiller()
     {       
         yield return new WaitForSeconds(0.5f);
-        _destroy.Play();
+        PlaySound.Instanse.PlayBatDestroySound();
         Boom();
         yield return new WaitForSeconds(0.4f);        
         Destroy(gameObject);

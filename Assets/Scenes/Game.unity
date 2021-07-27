@@ -1439,19 +1439,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 596422986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1854293572}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: PlayOnBtnClickSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &596422986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4310,18 +4298,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1854293572}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: PlayOnBtnClickSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 560242786}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: BackToMainMenu
@@ -4762,18 +4738,6 @@ MonoBehaviour:
       - m_Target: {fileID: 560242786}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: BackToMainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1854293572}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: PlayOnBtnClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5340,18 +5304,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1854293572}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: PlayOnBtnClickSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 560242786}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: OpenFadePanel
@@ -5487,18 +5439,6 @@ MonoBehaviour:
       - m_Target: {fileID: 560242786}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: BackToMainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1854293572}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: PlayOnBtnClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6549,19 +6489,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1693854436}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1854293572}
-        m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
-        m_MethodName: PlayOnBtnClickSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1693854436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6611,12 +6539,12 @@ GameObject:
   - component: {fileID: 1854293573}
   - component: {fileID: 1854293572}
   m_Layer: 0
-  m_Name: SoundController
+  m_Name: SoundController2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1854293572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6629,8 +6557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f5fa7a0193ea454eb95cd8a6ca36941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onBtnClickSound: {fileID: 1376158199}
-  characterSound: {fileID: 797360544}
+  _audioSource: {fileID: 0}
 --- !u!4 &1854293573
 Transform:
   m_ObjectHideFlags: 0
