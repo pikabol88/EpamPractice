@@ -61,6 +61,12 @@ public class PlaySound : MonoBehaviour
         _audioSource.Play();
     }
 
+    public void PlayChickenDestroySound()
+    {
+        _audioSource.clip = _soundsDict.GetValue("Puf");
+        _audioSource.Play();
+    }
+
     public void PlayCharacterSound()
     {
         _audioSource.clip = _soundsDict.GetValue("Chicken");

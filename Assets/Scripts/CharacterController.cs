@@ -7,6 +7,7 @@ public class CharacterController : BaseCharacter
 {
     public int livesAmount;
     public Text livesAmountText;
+    public SkinnedMeshRenderer _mesh;
 
     private void Start()
     {
@@ -25,11 +26,34 @@ public class CharacterController : BaseCharacter
                 livesAmountText.text = (livesAmount).ToString();
                 return;
             }
-            Debug.Log(id);
-            gameObject.SetActive(false);
-            GameController.Instanse.OnCharacterDestroyed(id);
-            
+            else
+            {
+                Debug.Log(id);
+                Boom();
+                StartCoroutine(DestroyCharacter());
+            }
+        }
+    }
 
+    private IEnumerator DestroyCharacter()
+    {       
+        yield return new WaitForSeconds(0.2f);
+        PlaySound.Instanse.PlayChickenDestroySound();
+        _mesh.gameObject.SetActive(false);
+        Boom();
+        yield return new WaitForSeconds(0.4f);
+        GameController.Instanse.OnCharacterDestroyed(id);
+        this.gameObject.SetActive(false);
+    }
+
+    private void Boom()
+    {
+        var _particleSystem = GetComponentsInChildren<ParticleSystem>();
+        Debug.Log(_particleSystem);
+        foreach (var ps in _particleSystem)
+        {
+            Debug.Log(ps);
+            ps.Play();
         }
     }
 }

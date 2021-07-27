@@ -11,7 +11,7 @@ public class KillerController : BaseCharacter
     [SerializeField] private Animator _animator;
     [SerializeField] private SkinnedMeshRenderer _mesh;
 
-   // [SerializeField] private AudioSource _onMouseUp;
+    // [SerializeField] private AudioSource _onMouseUp;
     //[SerializeField] private AudioSource _onCollision;
     //[SerializeField] private AudioSource _destroy;
 
@@ -45,15 +45,15 @@ public class KillerController : BaseCharacter
             else
             {
                 transform.position = new Vector3(mousePosition.x, mousePosition.y, transform.position.z);
-            }           
+            }
         }
         else
         {
-             Vector3 point = _camera.WorldToViewportPoint(transform.position); 
-             if (point.y < 0f || point.y > 1f || point.x > 1f || point.x < 0f)
-             {
-                 StartCoroutine(DestroyKiller());
-             }
+            Vector3 point = _camera.WorldToViewportPoint(transform.position);
+            if (point.y < 0f || point.y > 1f || point.x > 1f || point.x < 0f)
+            {
+                StartCoroutine(DestroyKiller());
+            }
         }
 
     }
@@ -75,9 +75,9 @@ public class KillerController : BaseCharacter
 
     IEnumerator LetsGo()
     {
-        yield return new WaitForSeconds(0.1f); 
+        yield return new WaitForSeconds(0.1f);
         Destroy(_springJoint);
-        enabled = false;        
+        enabled = false;
         _animator.SetBool("Move", true);
         yield return new WaitForSeconds(0.1f);
         GameController.Instanse.KillerOnPress(true);
@@ -91,8 +91,8 @@ public class KillerController : BaseCharacter
             _animator.SetBool("Attack", true);
             PlaySound.Instanse.PlayBatCollisionSound();
             StartCoroutine(DestroyKiller());
-        }        
-        if (collision.collider.CompareTag("Ground"))
+        }
+        if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Killer"))
         {
             if (!isPressed)
             {
@@ -105,8 +105,9 @@ public class KillerController : BaseCharacter
 
     private IEnumerator DestroyKiller()
     {       
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         PlaySound.Instanse.PlayBatDestroySound();
+        _mesh.gameObject.SetActive(false);
         Boom();
         yield return new WaitForSeconds(0.4f);        
         Destroy(gameObject);

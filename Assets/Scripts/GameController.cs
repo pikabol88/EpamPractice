@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour
         {
             Debug.Log(element.id);
             _killersList.Add(element.id, element);
-            if (element.Mesh.material != null)
+            if (SettingsController.Instanse.BatMaterial != null)
             {
                 element.Mesh.material = SettingsController.Instanse.BatMaterial;
             }
